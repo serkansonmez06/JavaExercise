@@ -49,6 +49,9 @@ public class TodoResource {
 
 		return ResponseEntity.notFound().build();
 	}
+	
+	//Edit/Update a Todo
+	//PUT /users/{user_name}/todos/{todo_id}
 	@PutMapping("/users/{username}/todos/{id}")
 	public ResponseEntity<Todo> updateTodo(
 			@PathVariable String username,
@@ -58,6 +61,7 @@ public class TodoResource {
 		
 		return new ResponseEntity<Todo>(todo, HttpStatus.OK);
 	}
+	
 	@PostMapping("/users/{username}/todos")
 	public ResponseEntity<Void> updateTodo(
 			@PathVariable String username, @RequestBody Todo todo){
@@ -72,6 +76,5 @@ public class TodoResource {
 		
 		return ResponseEntity.created(uri).build();
 	}
-	
 		
 }
