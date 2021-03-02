@@ -1,4 +1,4 @@
-package com.fullstackdemo.rest.webservices.restfulwebservices.helloworld;
+package com.BookFinderApplication.helloworld;
 
 
 public class HelloWorldBean {

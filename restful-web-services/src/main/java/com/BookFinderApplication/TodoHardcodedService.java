@@ -1,4 +1,4 @@
-package com.fullstackdemo.rest.webservices.restfulwebservices.todo;
+package com.BookFinderApplication;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -10,12 +10,12 @@ import org.springframework.stereotype.Service;
 public class TodoHardcodedService {
 
 	private static List<Todo> todos = new ArrayList<>();
-	private static int idCounter = 0;
+	private static long idCounter = 0;
 
 	static {
-		todos.add(new Todo(++idCounter, "in28minutes", "Learn to Dance 2", new Date(), false));
-		todos.add(new Todo(++idCounter, "in28minutes", "Learn about Microservices 2", new Date(), false));
-		todos.add(new Todo(++idCounter, "in28minutes", "Learn about Angular", new Date(), false));
+//		todos.add(new Todo(++idCounter, "Serkan", "Watch movie", new Date(), false));
+//		todos.add(new Todo(++idCounter, "Ama", "Read Book", new Date(), false));
+//		todos.add(new Todo(++idCounter, "David", "Walk", new Date(), false));
 	}
 
 	public List<Todo> findAll() {

@@ -1,4 +1,4 @@
-package com.fullstackdemo.rest.webservices.restfulwebservices;
+package com.BookFinderApplication;
 
 
 import org.springframework.boot.SpringApplication;

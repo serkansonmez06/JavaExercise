@@ -1,4 +1,4 @@
-package com.fullstackdemo.rest.webservices.restfulwebservices.helloworld;
+package com.BookFinderApplication.helloworld;
 
 
 import org.springframework.web.bind.annotation.CrossOrigin;
