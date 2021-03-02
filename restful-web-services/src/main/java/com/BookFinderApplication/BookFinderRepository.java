@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 
 
 @Repository
-public interface Bookfinderrepisotory extends JpaRepository<Todo, Long> {
-	List<Todo>findByUsername(String username);
+public interface BookFinderRepository extends JpaRepository<BookFinderRecord, Long> {
+	List<BookFinderRecord>findByUsername(String username);
 
 }

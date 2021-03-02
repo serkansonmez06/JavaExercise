@@ -21,65 +21,60 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 @CrossOrigin(origins="http://localhost:4200")
 @RestController
-public class TodoJpaResource2 {
+public class BookFinderController {
 	
 	@Autowired
-	private TodoHardcodedService todoService;
+	private BookFinderRepository todoService;
 
 	@Autowired
-	private Bookfinderrepisotory todoJpaRepository;
+	private BookFinderRepository todoJpaRepository;
 
 	
-	@GetMapping("/jpa/users/{username}/todos")
-	public List<Todo> getAllTodos(@PathVariable String username){
+	@GetMapping("/jpa/users/{username}/notes")
+	public List<BookFinderRecord> getAllTodos(@PathVariable String username){
 		return todoJpaRepository.findByUsername(username);
 		//return todoService.findAll();
 	}
 
-	@GetMapping("/jpa/users/{username}/todos/{id}")
-	public Todo getTodo(@PathVariable String username, @PathVariable long id){
+	@GetMapping("/jpa/users/{username}/notes/{id}")
+	public BookFinderRecord getTodo(@PathVariable String username, @PathVariable long id){
 		return todoJpaRepository.findById(id).get();
 		//return todoService.findById(id);
 	}
 
-	// DELETE /users/{username}/todos/{id}
-	@DeleteMapping("/jpa/users/{username}/todos/{id}")
+	
+	@DeleteMapping("/jpa/users/{username}/notes/{id}")
 	public ResponseEntity<Void> deleteTodo(
 			@PathVariable String username, @PathVariable long id) {
 
 		todoJpaRepository.deleteById(id);
 
-		
-
 		return ResponseEntity.noContent().build();
 	}
 	
 
-	//Edit/Update a Todo
-	//PUT /users/{user_name}/todos/{todo_id}
-	@PutMapping("/jpa/users/{username}/todos/{id}")
-	public ResponseEntity<Todo> updateTodo(
+	
+	@PutMapping("/jpa/users/{username}/notes/{id}")
+	public ResponseEntity<BookFinderRecord> updateTodo(
 			@PathVariable String username,
-			@PathVariable long id, @RequestBody Todo todo){
+			@PathVariable long id, @RequestBody BookFinderRecord todo){
 		
         todo.setUsername(username);
 		
-		Todo todoUpdated = todoJpaRepository.save(todo);
+		BookFinderRecord todoUpdated = todoJpaRepository.save(todo);
 		
-		return new ResponseEntity<Todo>(todo, HttpStatus.OK);
+		return new ResponseEntity<BookFinderRecord>(todo, HttpStatus.OK);
 	}
 	
-	@PostMapping("/jpa/users/{username}/todos")
+	@PostMapping("/jpa/users/{username}/notes")
 	public ResponseEntity<Void> createTodo(
-			@PathVariable String username, @RequestBody Todo todo){
+			@PathVariable String username, @RequestBody BookFinderRecord todo){
 
 		todo.setUsername(username);
 		
-		Todo createdTodo = todoJpaRepository.save(todo);
+		BookFinderRecord createdTodo = todoJpaRepository.save(todo);
 		
-		//Location
-		//Get current resource url
-		///{id}
+		
 		URI uri = ServletUriComponentsBuilder.fromCurrentRequest()
 				.path("/{id}").buildAndExpand(createdTodo.getId()).toUri();
 		
