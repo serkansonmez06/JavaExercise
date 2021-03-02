@@ -31,13 +31,13 @@ public class BookFinderController {
 
 	
 	@GetMapping("/jpa/users/{username}/notes")
-	public List<BookFinderRecord> getAllTodos(@PathVariable String username){
+	public List<BookFinderRecords> getAllTodos(@PathVariable String username){
 		return todoJpaRepository.findByUsername(username);
 		//return todoService.findAll();
 	}
 
 	@GetMapping("/jpa/users/{username}/notes/{id}")
-	public BookFinderRecord getTodo(@PathVariable String username, @PathVariable long id){
+	public BookFinderRecords getTodo(@PathVariable String username, @PathVariable long id){
 		return todoJpaRepository.findById(id).get();
 		//return todoService.findById(id);
 	}
@@ -55,24 +55,24 @@ public class BookFinderController {
 
 	
 	@PutMapping("/jpa/users/{username}/notes/{id}")
-	public ResponseEntity<BookFinderRecord> updateTodo(
+	public ResponseEntity<BookFinderRecords> updateTodo(
 			@PathVariable String username,
-			@PathVariable long id, @RequestBody BookFinderRecord todo){
+			@PathVariable long id, @RequestBody BookFinderRecords todo){
 		
         todo.setUsername(username);
 		
-		BookFinderRecord todoUpdated = todoJpaRepository.save(todo);
+		BookFinderRecords todoUpdated = todoJpaRepository.save(todo);
 		
-		return new ResponseEntity<BookFinderRecord>(todo, HttpStatus.OK);
+		return new ResponseEntity<BookFinderRecords>(todo, HttpStatus.OK);
 	}
 	
 	@PostMapping("/jpa/users/{username}/notes")
 	public ResponseEntity<Void> createTodo(
-			@PathVariable String username, @RequestBody BookFinderRecord todo){
+			@PathVariable String username, @RequestBody BookFinderRecords todo){
 
 		todo.setUsername(username);
 		
-		BookFinderRecord createdTodo = todoJpaRepository.save(todo);
+		BookFinderRecords createdTodo = todoJpaRepository.save(todo);
 		
 		
 		URI uri = ServletUriComponentsBuilder.fromCurrentRequest()

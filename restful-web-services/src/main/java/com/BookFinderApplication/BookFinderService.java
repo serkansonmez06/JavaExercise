@@ -6,16 +6,16 @@ import java.util.List;
 
 
 public class BookFinderService {
-private static List<BookFinderRecord> todos = new ArrayList<>();
+private static List<BookFinderRecords> todos = new ArrayList<>();
 private static long idCounter = 0;
 
 
 
-public List<BookFinderRecord> findAll() {
+public List<BookFinderRecords> findAll() {
 	return todos;
 }
 
-public BookFinderRecord save(BookFinderRecord todo) {
+public BookFinderRecords save(BookFinderRecords todo) {
 	if(todo.getId()==-1 || todo.getId()==0) {
 		todo.setId(++idCounter);
 		todos.add(todo);
@@ -26,8 +26,8 @@ public BookFinderRecord save(BookFinderRecord todo) {
 	return todo;
 }
 
-public BookFinderRecord deleteById(long id) {
-	BookFinderRecord todo = findById(id);
+public BookFinderRecords deleteById(long id) {
+	BookFinderRecords todo = findById(id);
 
 	if (todo == null)
 		return null;
@@ -39,8 +39,8 @@ public BookFinderRecord deleteById(long id) {
 	return null;
 }
 
-public BookFinderRecord findById(long id) {
-	for (BookFinderRecord todo : todos) {
+public BookFinderRecords findById(long id) {
+	for (BookFinderRecords todo : todos) {
 		if (todo.getId() == id) {
 			return todo;
 		}
