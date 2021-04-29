@@ -50,6 +50,9 @@ public class Main {
 		stockmarket.sell(stock1);
 		stockmarket.sell(stock);
 		
+	
+		
 	}
+	
 
 }
