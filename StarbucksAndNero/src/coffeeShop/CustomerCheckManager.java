@@ -1,4 +1,4 @@
-package homework;
+package coffeeShop;
 
 public class CustomerCheckManager implements ICustomerCheckService{
 

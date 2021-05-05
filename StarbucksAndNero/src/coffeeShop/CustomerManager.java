@@ -1,4 +1,4 @@
-package homework;
+package coffeeShop;
 
 public abstract class CustomerManager implements ICustmorService {
 	

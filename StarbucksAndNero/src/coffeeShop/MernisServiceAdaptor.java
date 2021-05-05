@@ -1,4 +1,4 @@
-package homework;
+package coffeeShop;
 
 import java.rmi.RemoteException;
 
