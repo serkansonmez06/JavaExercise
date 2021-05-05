@@ -11,7 +11,7 @@ public class Main {
 		
 		
 		Customer customer = new Customer();
-		customer.setNationalityNumber("242423423");
+		customer.setNationalityNumber("11662198936");
 		customer.setFirstName("Serkan");
 		customer.setLastName("Sönmez");
 		customer.setDateOfBirth(1983);
@@ -22,7 +22,9 @@ public class Main {
           
                
         CustomerManager customerManager = new CustomerManager(new MernisServiceAdaptor());
+        customerManager.delete(customer);
         customerManager.add(customer);
+        
          
         ProductManager productManager = new ProductManager();
  		productManager.sell(customer, product, campaign);;

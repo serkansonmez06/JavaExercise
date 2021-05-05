@@ -15,8 +15,8 @@ public class CustomerManager implements ICustomerService{
 		
 		
 		if(this.customerCheckService.checkIfrealPerson(customer)) {	
-			
-			System.out.println("New Customer Added" + customer.getFirstName() + " " + customer.getLastName());
+	    
+			System.out.println("New Customer Added " + customer.getFirstName() + " " + customer.getLastName());
 		}else{
 			System.out.println("Invalid entry");
 			}

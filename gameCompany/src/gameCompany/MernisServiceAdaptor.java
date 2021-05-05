@@ -24,7 +24,7 @@ public class MernisServiceAdaptor implements ICustomerCheckService {
 				}catch(RemoteException e) {
 					e.printStackTrace();
 				}
-		return false;
+		return result;
 	}
 
 }

@@ -14,14 +14,14 @@ public class Main {
 		Customer customer = new Customer();
 		
 		
-		customer.setNatiolnalityId("112333333");
+		customer.setNatiolnalityId("11662198936");
 		customer.setFirstName("Serkan");
 		customer.setLastName("Sönmez");
 		customer.setDateOfBirth(1983);
 
 		
-		//customerManager1.save(customer);
-		customerManager.save(customer);
+		customerManager1.save(customer);
+		//customerManager.save(customer);
 	
 		
 		
