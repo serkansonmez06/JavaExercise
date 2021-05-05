@@ -13,7 +13,6 @@
 	<classpathentry kind="lib" path="/Users/serkansonmez/.p2/pool/plugins/javax.wsdl_1.6.2.v201012040545.jar"/>
 	<classpathentry kind="lib" path="/Users/serkansonmez/.p2/pool/plugins/org.apache.commons.logging_1.2.0.v20180409-1502.jar"/>
 	<classpathentry kind="lib" path="/Users/serkansonmez/Downloads/javax.mail.jar"/>
-	<classpathentry kind="lib" path="/Users/serkansonmez/Downloads/activation (1).jar"/>
 	<classpathentry kind="lib" path="/Users/serkansonmez/Downloads/activation.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
