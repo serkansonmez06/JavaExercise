@@ -28,21 +28,7 @@ public class GoogleAuthorizationAdapter implements UserAuthorizationService { //
 	
 	
 	
-//	public User mappingUser() {
-//		
-//		User user = new User(); // instantiated 
-//		GoogleUser googleUser =new GoogleUser(); //instantiated
-//		
-//		user.setId(id); 
-//		user.setFirstName(googleUser.getFirstName());
-//		user.setLastName(googleUser.getLastName());
-//		user.setEmail(googleUser.getEmail());
-//		user.setPassword(password);
-//		
-//		
-//		return user;
-//		
-//	}
+
 	
 
 }
