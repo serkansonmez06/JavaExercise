@@ -3,18 +3,23 @@ package Kodlamaio.northwind.entity.concretes;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data 
 @Entity
 @Table(name="products") //table name in database. has to match
+@AllArgsConstructor
+@NoArgsConstructor
 public class Product {
 	
 	@Id                                //it is for primary key
-	@GeneratedValue                    // indicated auto incremented
+	@GeneratedValue(strategy = GenerationType.IDENTITY)                   // indicated auto incremented
 	@Column(name="product_id")       //column name in database
 	private int id;
 	
@@ -33,19 +38,7 @@ public class Product {
 	@Column(name="quantity_per_unit")
 	private String quantityPerUnit;
 	
-	public Product() {
-		
-	}
-	public Product(int id, int categoryId, String productName, double unitPrice, short unitsInStock,
-			String quantityPerUnit) {
-		super();
-		this.id = id;
-		this.categoryId = categoryId;
-		this.productName = productName;
-		this.unitPrice = unitPrice;
-		this.unitsInStock = unitsInStock;
-		this.quantityPerUnit = quantityPerUnit;
-	}
+
 	
 
 }

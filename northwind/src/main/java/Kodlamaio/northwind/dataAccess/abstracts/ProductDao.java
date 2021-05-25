@@ -8,4 +8,6 @@ public interface ProductDao extends JpaRepository<Product,Integer> {
 
 	//Product and INteger indicates table and id number in database
 	
+	
+	
 }
